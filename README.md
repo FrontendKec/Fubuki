@@ -6,7 +6,7 @@
 <img src="https://img.shields.io/github/license/FrontendKec/Fubuki?style=flat-square">
 <img src="https://img.shields.io/github/package-json/v/FrontendKec/Fubuki?style=flat-square">
 <img src="https://img.shields.io/github/last-commit/FrontendKec/Fubuki?style=flat-square">
-<img src="https://img.shields.io/github/deployments/FrontendKec/Fubuki/Production?style=flat-square"></p>
+<img src="https://img.shields.io/github/deployments/FrontendKec/Fubuki/cyclic:prod?style=flat-square"></p>
 <br>
 
 ### Installation

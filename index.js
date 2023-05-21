@@ -4,7 +4,6 @@ const router = require('./routes/router');
 const port = 2700
 
 app.use(router);
-app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
