@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fubuki - Docs</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Ubuntu&display=swap">
+    <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <div class="navbar">
+            <a class="logo" href="./">Fubuki</a>
+            <ul class="links">
+                <li><a href="/">Home</a></li>
+                <li><a href="https://github.com/FrontendKec/Fubuki">Github</a></li>
+            </ul>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <h1>Docs</h1>
+            <p>Below you'll find examples using 
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" 
+                target="_blank">Fetch API</a> but you can use any other http library out there.</p>
+            <hr>
+            <br>
+            <h2>Note</h2>
+            <p>Default number of random quote returned is 1.</p>
+            <br>
+            <br>
+            <h2>Available Routes</h2>
+            <p>1. Get Random Quote</p>
+            <p>2. Coming soon..</p>
+            <hr>
+            <br>
+            <h2>Get Random Quote</h2>
+            <div class="example">
+                <p><span>fetch</span><a>("/api/random")</a></p>
+                <p><span>.then</span><a>((</a>response<a>)</a> => response<span>.json</span><a>())</a></p>
+                <p><span>.then</span><a>((</a>quote<a>)</a> => console<span>.log</span><a>(</a>quote<a>));</a></p>
+            </div>
+            <h2>Output</h2>
+            <div class="example">
+                <p><a>{</a></p>
+                <p><span>‎‎‎‎‎‎‎‎ㅤAnime</span>: <a>"...",</a></p>
+                <p><span>‎‎‎‎‎‎‎‎ㅤCharacter</span>: <a>"...",</a></p>
+                <p><span>‎‎‎‎‎‎‎‎ㅤQuote</span>: <a>"...",</a></p>
+                <p><a>}</a></p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Made with <span>❤️</span> by <a href="https://github.com/FrontendKec" target="_blank">FrontendKec</a> &copy;2023</p>
+        </div>
+    </div>
+</body>
+</html>

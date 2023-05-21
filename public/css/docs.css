@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    transition: 0.2s;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* All content container */
+.container {
+    position: relative;
+}
+/* Navigation */
+.container .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(10, 10, 35, 0.1);
+    padding: 10px;
+}
+.container .navbar .logo {
+    color: rgb(10, 10, 35);
+    font-size: 30px;
+    font-weight: bold;
+}
+.container .navbar .links {
+    display: flex;
+    gap: 10px;
+}
+.container .navbar .links li a {
+    color: rgb(10, 10, 35);
+    font-size: 18px; 
+}
+.container .navbar .links li a:hover {
+    color: mediumslateblue;
+}
+/* Content */
+.container .content {
+    display: block;
+    text-align: start;
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 80px;
+}
+.container .content hr {
+    background-color: rgba(10, 10, 35, 0.6);
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.container .content h1 {
+    color: rgb(10, 10, 35);
+    font-size: 40px;
+}
+.container .content h2 {
+    color: rgb(10, 10, 35);
+}
+.container .content p {
+    color: rgb(10, 10, 35);
+}
+.container .content a {
+    color: mediumslateblue;
+}
+.container .content a:hover {
+    text-decoration: underline;
+}
+.container .content .example {
+    background-color: rgb(20, 20, 30);
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+.container .content .example p {
+    color: white;
+}
+.container .content .example p span {
+    color: paleturquoise;
+}
+.container .content .example p a {
+    color: palegreen;
+}
+/* Footer */
+.container .footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.container .footer p {
+    color: rgb(10, 10, 35);
+}
+.container .footer span {
+    color: crimson;
+}
+.container .footer a {
+    color: mediumslateblue;
+}
+.container .footer a:hover {
+    text-decoration: underline;
+}
