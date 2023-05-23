@@ -9,7 +9,7 @@
 <img src="https://img.shields.io/github/deployments/FrontendKec/Fubuki/cyclic:prod?style=flat-square"></p>
 <br>
 
-### Installation
+## Installation
 Run the following command to clone the repository, and install the dependencies:
 ```sh
 git clone https://github.com/FrontendKec/Fubuki.git
@@ -25,6 +25,17 @@ npm run start
 Now the server is running on http://localhost:2700
 
 <br>
+
+## Routes
+Below you'll find examples using Fetch API but you can use any other http library out there.
+
+### Get Random Quote
+```sh
+fetch("https://fine-cyan-bullfrog-vest.cyclic.app//v1/api/random")
+  .then((response) => response.json())
+  .then((animelist) => console.log(animelist));
+```
+
 <br>
 
 ### FrontendKec &copy;2023

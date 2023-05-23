@@ -1,16 +1,34 @@
 const express = require('express');
-const app = express();
-const router = require('./routes/router');
-const port = 2700
+const mongoose = require('mongoose');
+const server = express();
+require('dotenv').config();
 
-app.use(router);
-app.set('view engine', 'ejs');
+const connectDB = async () => {
+  try {
+    const connect = await mongoose.connect(process.env.DATABASE_URL);
+    console.log(`DB Connected: ${connect.connection.host}`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+}
 
-app.get('/', (req, res) => {
-    res.render('index');
-})
-app.get('/docs', (req, res) => {
-    res.render('docs');
-})
+const db_schema = new mongoose.Schema({
+    anime: String,
+    character: String,
+    quote: String,
+});
 
-app.listen(port, () => console.log('Listening on port ' + port));
+const db_model = mongoose.model('Quote', db_schema);
+
+server.get('/', (request, response) => {
+  response.status(200).send({"200": "Welcome to Fubuki-API 🎉"});
+});
+
+server.get('/v1/api/random', async (request, response) => {
+  const quotes = await db_model.find({}, { _id: 0 });
+  const random = quotes[Math.floor(Math.random() * quotes.length)];
+  response.status(200).json(random);
+});
+
+connectDB().then(() => { server.listen(process.env.PORT, () => { console.log("Running!") }) })
