@@ -22,7 +22,7 @@ start the server with the following command:
 npm run start
 ```
 
-Now the server is running on http://localhost:2700
+Now the server is running on http://localhost:3000
 
 <br>
 
@@ -33,7 +33,7 @@ Below you'll find examples using Fetch API but you can use any other http librar
 ```sh
 fetch("https://fine-cyan-bullfrog-vest.cyclic.app//v1/api/random")
   .then((response) => response.json())
-  .then((animelist) => console.log(animelist));
+  .then((quote) => console.log(quote));
 ```
 
 <br>
