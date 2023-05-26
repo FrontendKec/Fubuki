@@ -1,40 +1,21 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const json = require('express-json');
+const cors = require('cors');
 const server = express();
-require('dotenv').config();
+const databaseConnect = require('./database/db');
+const router = require('./routes/router');
 
-const connectDB = async () => {
-  try {
-    const connect = await mongoose.connect(process.env.DATABASE_URL);
-    console.log(`DB Connected: ${connect.connection.host}`);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-}
+const options = {
+  methods: ['GET'],
+  allowedHeaders: ['Content-Type']
+};
+server.use(router);
+server.use(cors(options));
+server.use(json());
 
-const db_schema = new mongoose.Schema({
-    anime: String,
-    character: String,
-    quote: String,
+databaseConnect().then(() => { 
+  server.listen(process.env.PORT, 
+    () => { 
+      console.log("Running!") 
+    }) 
 });
-
-const db_model = mongoose.model('Quote', db_schema);
-
-server.get('/', (request, response) => {
-  response.status(200).send({"Status": [{"API": "Welcome to Fubuki-API 🎉"}], 
-  "Routes": [{"Info": "/v1/api"}, {"Random": "/v1/api/random"}]});
-});
-
-server.get('/v1/api', async (request, response) => {
-  const quotes = await db_model.find({}, { _id: 0 });
-  response.status(200).json({"Available": quotes.length + " Quote"});
-});
-
-server.get('/v1/api/random', async (request, response) => {
-  const quotes = await db_model.find({}, { _id: 0 });
-  const random = quotes[Math.floor(Math.random() * quotes.length)];
-  response.status(200).json(random);
-});
-
-connectDB().then(() => { server.listen(process.env.PORT, () => { console.log("Running!") }) })

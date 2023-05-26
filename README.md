@@ -37,6 +37,13 @@ fetch("https://fine-cyan-bullfrog-vest.cyclic.app/v1/api")
   .then((info) => console.log(info));
 ```
 
+### Get All Anime Names
+```sh
+fetch("https://fine-cyan-bullfrog-vest.cyclic.app/v1/api/all")
+  .then((response) => response.json())
+  .then((anime) => console.log(anime));
+```
+
 ### Get Random Quote
 ```sh
 fetch("https://fine-cyan-bullfrog-vest.cyclic.app/v1/api/random")
