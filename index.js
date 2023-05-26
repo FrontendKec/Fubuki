@@ -22,7 +22,13 @@ const db_schema = new mongoose.Schema({
 const db_model = mongoose.model('Quote', db_schema);
 
 server.get('/', (request, response) => {
-  response.status(200).send({"200": "Welcome to Fubuki-API 🎉"});
+  response.status(200).send({"Status": [{"API": "Welcome to Fubuki-API 🎉"}], 
+  "Routes": [{"Info": "/v1/api"}, {"Random": "/v1/api/random"}]});
+});
+
+server.get('/v1/api', async (request, response) => {
+  const quotes = await db_model.find({}, { _id: 0 });
+  response.status(200).json({"Available": quotes.length + " Quote"});
 });
 
 server.get('/v1/api/random', async (request, response) => {

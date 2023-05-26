@@ -1,4 +1,5 @@
 # Fubuki
+<p align="center"><img src="./icon.png"></p>
 <p align="center">A free restful API serving quality anime quotes<br>Powered by Express.js</p>
 
 <br>
@@ -29,9 +30,16 @@ Now the server is running on http://localhost:3000
 ## Routes
 Below you'll find examples using Fetch API but you can use any other http library out there.
 
+### Get Info
+```sh
+fetch("https://fine-cyan-bullfrog-vest.cyclic.app/v1/api")
+  .then((response) => response.json())
+  .then((info) => console.log(info));
+```
+
 ### Get Random Quote
 ```sh
-fetch("https://fine-cyan-bullfrog-vest.cyclic.app//v1/api/random")
+fetch("https://fine-cyan-bullfrog-vest.cyclic.app/v1/api/random")
   .then((response) => response.json())
   .then((quote) => console.log(quote));
 ```
