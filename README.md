@@ -1,6 +1,6 @@
 # Fubuki
 <p align="center"><img src="./icon.png"></p>
-<p align="center">A free restful API serving quality anime quotes<br>Powered by Express.js</p>
+<p align="center">A free restful API serving quality anime quotes<br>Powered by Express.js & MongoDB</p>
 
 <br>
 <p align="center">
@@ -30,25 +30,32 @@ Now the server is running on http://localhost:3000
 ## Routes
 Below you'll find examples using Fetch API but you can use any other http library out there.
 
-### Get Info
+### Get Available Quotes Count
 ```sh
-fetch("https://fine-cyan-bullfrog-vest.cyclic.app/v1/api")
+fetch("https://fine-cyan-bullfrog-vest.cyclic.app/api/quotes")
   .then((response) => response.json())
-  .then((info) => console.log(info));
+  .then((data) => console.log(data));
 ```
 
-### Get All Anime Names
+### Get Available Anime
 ```sh
-fetch("https://fine-cyan-bullfrog-vest.cyclic.app/v1/api/all")
+fetch("https://fine-cyan-bullfrog-vest.cyclic.app/api/anime/all")
   .then((response) => response.json())
-  .then((anime) => console.log(anime));
+  .then((data) => console.log(data));
 ```
 
 ### Get Random Quote
 ```sh
-fetch("https://fine-cyan-bullfrog-vest.cyclic.app/v1/api/random")
+fetch("https://fine-cyan-bullfrog-vest.cyclic.app/api/quote/random")
   .then((response) => response.json())
-  .then((quote) => console.log(quote));
+  .then((data) => console.log(data));
+```
+
+### Get 10 Random Quotes
+```sh
+fetch("https://fine-cyan-bullfrog-vest.cyclic.app/api/quotes/random")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
 ```
 
 <br>
