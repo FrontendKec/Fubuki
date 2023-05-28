@@ -1,6 +1,6 @@
 # Fubuki
 <p align="center"><img src="./icon.png"></p>
-<p align="center">A free restful API serving quality anime quotes<br>Powered by Express.js & MongoDB</p>
+<p align="center">A free restful API serving quality anime quotes<br>Powered by Koa.js & MongoDB</p>
 
 <br>
 <p align="center">
