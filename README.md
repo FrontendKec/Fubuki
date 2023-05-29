@@ -7,7 +7,7 @@
 <img src="https://img.shields.io/github/license/FrontendKec/Fubuki?style=flat-square">
 <img src="https://img.shields.io/github/package-json/v/FrontendKec/Fubuki?style=flat-square">
 <img src="https://img.shields.io/github/last-commit/FrontendKec/Fubuki?style=flat-square">
-<img src="https://img.shields.io/github/deployments/FrontendKec/Fubuki/cyclic:prod?style=flat-square"></p>
+<img src="https://img.shields.io/github/deployments/FrontendKec/Fubuki/Production?style=flat-square"></p>
 <br>
 
 ## Installation
@@ -32,28 +32,28 @@ Below you'll find examples using Fetch API but you can use any other http librar
 
 ### Get Available Quotes Count
 ```sh
-fetch("https://fine-cyan-bullfrog-vest.cyclic.app/api/quotes")
+fetch("https://fubuki-delta.vercel.app/api/quotes")
   .then((response) => response.json())
   .then((data) => console.log(data));
 ```
 
 ### Get Available Anime
 ```sh
-fetch("https://fine-cyan-bullfrog-vest.cyclic.app/api/anime/all")
+fetch("https://fubuki-delta.vercel.app/api/anime/all")
   .then((response) => response.json())
   .then((data) => console.log(data));
 ```
 
 ### Get Random Quote
 ```sh
-fetch("https://fine-cyan-bullfrog-vest.cyclic.app/api/quote/random")
+fetch("https://fubuki-delta.vercel.app/api/quote/random")
   .then((response) => response.json())
   .then((data) => console.log(data));
 ```
 
 ### Get 10 Random Quotes
 ```sh
-fetch("https://fine-cyan-bullfrog-vest.cyclic.app/api/quotes/random")
+fetch("https://fubuki-delta.vercel.app/api/quotes/random")
   .then((response) => response.json())
   .then((data) => console.log(data));
 ```
