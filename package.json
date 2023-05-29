@@ -2,11 +2,11 @@
   "name": "fubuki",
   "version": "1.0.4",
   "description": "Fubiki random anime quotes api",
-  "main": "index.js",
+  "main": "./src/index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon ./src/index.js",
+    "start": "node ./src/index.js"
   },
   "author": "Kec",
   "license": "MIT",

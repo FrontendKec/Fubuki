@@ -49,5 +49,7 @@ router.get('/api/quotes/random', async (ctx) => {
 });
 
 databaseConnect().then(() => { 
-  server.listen(process.env.PORT, () => console.log('Running!'));
+  server.listen(process.env.PORT, () => console.log('✔️Connected to API!'));
 });
+
+export default server
