@@ -26,6 +26,22 @@ router.get('/api/anime/all', async (ctx) => {
   ctx.body = [{ 'Count': list.length + ' Anime'}, list];
 });
 
+router.get('/api/anime/:name', async (ctx) => {
+  const { name } = ctx.params;
+  if (name) {
+    const quotes = await db_model.find({ anime: { $regex: name, $options: 'i' } }, { _id: 0 });
+    ctx.body = quotes;
+  }
+});
+
+router.get('/api/character/:name', async (ctx) => {
+  const { name } = ctx.params;
+  if (name) {
+    const quotes = await db_model.find({ character: { $regex: name, $options: 'i' } }, { _id: 0 });
+    ctx.body = quotes;
+  }
+});
+
 router.get('/api/quote/random', async (ctx) => {
   const quotes = await db_model.find({}, { _id: 0 });
   const random = quotes[Math.floor(Math.random() * quotes.length)];

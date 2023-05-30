@@ -58,6 +58,20 @@ fetch("https://fubuki-delta.vercel.app/api/quotes/random")
   .then((data) => console.log(data));
 ```
 
+### Get Quotes By Anime Name
+```sh
+fetch("https://fubuki-delta.vercel.app/api/anime/:name")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+### Get Quotes By Character Name
+```sh
+fetch("https://fubuki-delta.vercel.app/api/character/:name")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
 <br>
 
 ### FrontendKec &copy;2023
