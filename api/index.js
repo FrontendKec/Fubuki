@@ -1,3 +1,3 @@
-import server from '../src/index.js'
+import server from '../src/index.js';
 
-export default server
+export default server;

@@ -1,15 +1,24 @@
-import Koa from 'koa'
-import Json from 'koa-json'
-import databaseConnect from './database/database.js'
-import router from './routes/router.js'
+import Koa from 'koa';
+import json from 'koa-json';
+import databaseConnect from './database/database.js';
+import router from './routes/router.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const server = new Koa();
+server.use(json()).use(router.routes()).use(router.allowedMethods());
 
-server.use(Json());
-server.use(router.routes()).use(router.allowedMethods());
+const startServer = async () => {
+  try {
+    await databaseConnect();
+    server.listen(process.env.PORT, () => console.log('✔️ Connected to API!'));
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+};
 
-databaseConnect().then(() => {
-  server.listen(process.env.PORT, () => console.log('✔️ Connected to API!'));
-});
+startServer();
 
 export default server;
