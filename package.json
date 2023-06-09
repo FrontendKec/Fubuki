@@ -1,6 +1,6 @@
 {
   "name": "fubuki",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Fubiki random anime quotes api",
   "main": "./src/index.js",
   "type": "module",
@@ -11,6 +11,7 @@
   "author": "Kec",
   "license": "MIT",
   "dependencies": {
+    "@koa/cors": "^4.0.0",
     "dotenv": "^16.0.3",
     "koa": "^2.14.2",
     "koa-json": "^2.0.2",
