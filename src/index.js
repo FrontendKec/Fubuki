@@ -1,6 +1,5 @@
 import Koa from 'koa';
 import json from 'koa-json';
-import cors from '@koa/cors'
 import databaseConnect from './database/database.js';
 import router from './routes/router.js';
 import dotenv from 'dotenv';
@@ -8,11 +7,15 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const server = new Koa();
-server.use(json()).use(router.routes()).use(router.allowedMethods()).use(cors({
-  origin: '*',
-  allowMethods: ['GET'],
-  allowHeaders: ['Content-Type'],
-}));
+
+server.use(async (ctx, next) => {
+  ctx.set('Access-Control-Allow-Origin', '*');
+  ctx.set('Access-Control-Allow-Methods', 'GET');
+  ctx.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  await next();
+});
+
+server.use(json()).use(router.routes()).use(router.allowedMethods());
 
 const startServer = async () => {
   try {

@@ -11,13 +11,11 @@
   "author": "Kec",
   "license": "MIT",
   "dependencies": {
-    "@koa/cors": "^4.0.0",
     "dotenv": "^16.0.3",
     "koa": "^2.14.2",
     "koa-json": "^2.0.2",
     "koa-router": "^12.0.0",
     "mongoose": "^7.2.0",
-    "nodemon": "^2.0.22",
-    "redis": "^4.6.6"
+    "nodemon": "^2.0.22"
   }
 }
