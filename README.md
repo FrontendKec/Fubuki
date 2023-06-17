@@ -27,7 +27,7 @@ Now the server is running on http://localhost:3000
 
 <br>
 
-## Docs Coming Soon..
+### Read the docs here [Fubuki Docs](https://fubuki-docs.vercel.app/)
 
 <br>
 

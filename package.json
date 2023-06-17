@@ -1,6 +1,6 @@
 {
   "name": "fubuki",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Fubiki random anime quotes api",
   "main": "./src/index.js",
   "type": "module",
