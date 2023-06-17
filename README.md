@@ -27,50 +27,7 @@ Now the server is running on http://localhost:3000
 
 <br>
 
-## Routes
-Below you'll find examples using Fetch API but you can use any other http library out there.
-
-### Get Available Quotes Count
-```sh
-fetch("https://fubuki-delta.vercel.app/api/quotes")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-```
-
-### Get Available Anime
-```sh
-fetch("https://fubuki-delta.vercel.app/api/anime/all")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-```
-
-### Get Random Quote
-```sh
-fetch("https://fubuki-delta.vercel.app/api/quote/random")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-```
-
-### Get 10 Random Quotes
-```sh
-fetch("https://fubuki-delta.vercel.app/api/quotes/random")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-```
-
-### Get Quotes By Anime Name
-```sh
-fetch("https://fubuki-delta.vercel.app/api/anime/:name")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-```
-
-### Get Quotes By Character Name
-```sh
-fetch("https://fubuki-delta.vercel.app/api/character/:name")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-```
+## Docs Coming Soon..
 
 <br>
 
