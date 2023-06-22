@@ -10,25 +10,119 @@
 <img src="https://img.shields.io/github/deployments/FrontendKec/Fubuki/Production?style=flat-square"></p>
 <br>
 
-## Installation
-Run the following command to clone the repository, and install the dependencies:
+## Routes
+### Get Random Quote 
 ```sh
-git clone https://github.com/FrontendKec/Fubuki.git
-cd Fubuki
-npm install
+https://fubuki-api.vercel.app/api/v1/random
 ```
-
-start the server with the following command:
+### Output
 ```sh
-npm run start
+{
+    "anime": String,
+    "character": String,
+    "quote": String
+}
 ```
-
-Now the server is running on http://localhost:3000
-
 <br>
 
-### Read the docs here [Fubuki Docs](https://fubuki-docs.vercel.app/)
+### Get 5 Random Quotes
+```sh
+https://fubuki-api.vercel.app/api/v1/random/5
+```
+### Output
+```sh
+[
+    {
+        "anime": String,
+        "character": String,
+        "quote": String
+    },
+    ...
+]
+```
+<br>
 
+### Get 10 Random Quotes
+```sh
+https://fubuki-api.vercel.app/api/v1/random/10
+```
+### Output
+```sh
+[
+    {
+        "anime": String,
+        "character": String,
+        "quote": String
+    },
+    ...
+]
+```
+<br>
+
+### Get Quotes by Anime Name
+```sh
+https://fubuki-api.vercel.app/api/v1/anime/naruto
+```
+### Output
+```sh
+[
+    {
+        "anime": String,
+        "character": String,
+        "quote": String
+    },
+    ...
+]
+```
+<br>
+
+### Get Quotes by Character Name
+```sh
+https://fubuki-api.vercel.app/api/v1/character/ichigo
+```
+### Output
+```sh
+[
+    {
+        "anime": String,
+        "character": String,
+        "quote": String
+    },
+    ...
+]
+```
+<br>
+
+### Get Available Quotes Count
+```sh
+https://fubuki-api.vercel.app/api/v1/quotes
+```
+### Output
+```sh
+{
+    "quotes": Number
+}
+```
+<br>
+
+### Get Available Anime
+```sh
+https://fubuki-api.vercel.app/api/v1/anime
+```
+### Output
+```sh
+[
+    {
+        "count": Number
+    },
+    [
+        "String",
+        "String",
+        "String",
+        ...
+    ]
+]
+```
 <br>
 
 ### FrontendKec &copy;2023
