@@ -9,9 +9,11 @@ dotenv.config();
 const server = new Koa();
 
 server.use(async (ctx, next) => {
+  const period = 30
   ctx.set('Access-Control-Allow-Origin', '*');
   ctx.set('Access-Control-Allow-Methods', 'GET');
   ctx.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  ctx.set('Cache-control', (ctx.method === 'GET') ? `public, max-age=${period}` : 'no-store');
   await next();
 });
 

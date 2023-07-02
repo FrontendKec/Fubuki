@@ -25,9 +25,9 @@ https://fubuki-api.vercel.app/api/v1/random
 ```
 <br>
 
-### Get 5 Random Quotes
+### Get (1 - 50) Random Quotes [MAX=50]
 ```sh
-https://fubuki-api.vercel.app/api/v1/random/5
+https://fubuki-api.vercel.app/api/v1/random/44
 ```
 ### Output
 ```sh
@@ -37,24 +37,7 @@ https://fubuki-api.vercel.app/api/v1/random/5
         "character": String,
         "quote": String
     },
-    ...
-]
-```
-<br>
-
-### Get 10 Random Quotes
-```sh
-https://fubuki-api.vercel.app/api/v1/random/10
-```
-### Output
-```sh
-[
-    {
-        "anime": String,
-        "character": String,
-        "quote": String
-    },
-    ...
+    ... {+43}
 ]
 ```
 <br>

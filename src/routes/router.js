@@ -31,17 +31,21 @@ router.get(base + 'random', async (ctx) => {
   ctx.body = randomQuote[0];
 });
 
-router.get(base + 'random/5', async (ctx) => {
-  const randomQuotes = await db_model.aggregate([{ $sample: { size: 5 } }, { $project: { _id: 0 } }]);
-  ctx.body = randomQuotes;
+router.get(base + 'random/:int', async (ctx) => {
+  const { int } = ctx.params;
+  const max = parseInt(int);
+
+  if (Number.isInteger(max) && max <= 50) {
+    const randomQuotes = await db_model.aggregate([{ $sample: { size: max } }, { $project: { _id: 0 } }]);
+    ctx.body = randomQuotes;
+  } else {
+    ctx.body = [];
+  }
 });
 
-router.get(base + 'random/10', async (ctx) => {
-  const randomQuotes = await db_model.aggregate([{ $sample: { size: 10 } }, { $project: { _id: 0 } }]);
-  ctx.body = randomQuotes;
-});
 
-const searchQuotes = async (query, field) => {
+
+const search = async (query, field) => {
   if (query) {
     const quotes = await db_model.find({ [field]: { $regex: query, $options: 'i' } }, { _id: 0 });
     return quotes;
@@ -52,13 +56,13 @@ const searchQuotes = async (query, field) => {
 
 router.get(base + 'anime/:name', async (ctx) => {
   const { name } = ctx.params;
-  const quotes = await searchQuotes(name, 'anime');
+  const quotes = await search(name, 'anime');
   ctx.body = quotes;
 });
 
 router.get(base + 'character/:name', async (ctx) => {
   const { name } = ctx.params;
-  const quotes = await searchQuotes(name, 'character');
+  const quotes = await search(name, 'character');
   ctx.body = quotes;
 });
 
