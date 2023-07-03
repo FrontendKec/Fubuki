@@ -10,6 +10,11 @@
 <img src="https://img.shields.io/github/deployments/FrontendKec/Fubuki/Production?style=flat-square"></p>
 <br>
 
+***
+You can request any anime you want [Here](https://github.com/FrontendKec/Fubuki/discussions/1)
+***
+<br>
+
 ## Routes
 ### Get Random Quote 
 ```sh
