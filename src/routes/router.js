@@ -35,7 +35,7 @@ router.get(base + 'random/:int', async (ctx) => {
   const { int } = ctx.params;
   const max = parseInt(int);
 
-  if (Number.isInteger(max) && max <= 50) {
+  if (Number.isInteger(max) && max <= 20) {
     const randomQuotes = await db_model.aggregate([{ $sample: { size: max } }, { $project: { _id: 0 } }]);
     ctx.body = randomQuotes;
   } else {

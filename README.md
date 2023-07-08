@@ -30,9 +30,9 @@ https://fubuki-api.vercel.app/api/v1/random
 ```
 <br>
 
-### Get (1 - 50) Random Quotes [MAX=50]
+### Get (1 - 20) Random Quotes [MAX=20]
 ```sh
-https://fubuki-api.vercel.app/api/v1/random/44
+https://fubuki-api.vercel.app/api/v1/random/18
 ```
 ### Output
 ```sh
@@ -42,7 +42,7 @@ https://fubuki-api.vercel.app/api/v1/random/44
         "character": String,
         "quote": String
     },
-    ... {+43}
+    ... {+17}
 ]
 ```
 <br>
